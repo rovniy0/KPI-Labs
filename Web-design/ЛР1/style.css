@@ -1,0 +1,47 @@
+* {
+  padding: 0;
+  margin: 0;
+  background: #ffffff;
+}
+a {
+  text-decoration: none;
+}
+body {
+  font-family: "Roboto Slab", serif;
+  color: #071914;
+  line-height: 1.5;
+}
+
+.header_name {
+  text-align: center;
+  font-weight: 600;
+  line-height: 2;
+}
+.navigation_bar {
+  text-align: center;
+  font-size: 17px;
+}
+.text_block {
+  padding: 0px 40px;
+  line-height: 1.6;
+  font-size: 20;
+}
+
+.table {
+  margin: 0 auto;
+  text-align: center;
+  border: 2;
+  width: 100%; /* Робимо таблицю 100% шириною відносно батьківського контейнера */
+  border-collapse: collapse; /* Прибрати рамки комірок */
+  margin-bottom: 15px; /* Зовнішній відступ знизу */
+}
+.column_awards {
+  text-align: left;
+  padding-left: 20px;
+  line-height: 1.5;
+}
+footer {
+  text-align: center;
+  font-weight: 500;
+  line-height: 3;
+}
