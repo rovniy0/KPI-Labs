@@ -1,0 +1,14 @@
+C:\Users\Юзер\Desktop\University\OOP\LR1\bin\Debug\net7.0\LR1.exe
+C:\Users\Юзер\Desktop\University\OOP\LR1\bin\Debug\net7.0\LR1.deps.json
+C:\Users\Юзер\Desktop\University\OOP\LR1\bin\Debug\net7.0\LR1.runtimeconfig.json
+C:\Users\Юзер\Desktop\University\OOP\LR1\bin\Debug\net7.0\LR1.dll
+C:\Users\Юзер\Desktop\University\OOP\LR1\bin\Debug\net7.0\LR1.pdb
+C:\Users\Юзер\Desktop\University\OOP\LR1\obj\Debug\net7.0\LR1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Юзер\Desktop\University\OOP\LR1\obj\Debug\net7.0\LR1.AssemblyInfoInputs.cache
+C:\Users\Юзер\Desktop\University\OOP\LR1\obj\Debug\net7.0\LR1.AssemblyInfo.cs
+C:\Users\Юзер\Desktop\University\OOP\LR1\obj\Debug\net7.0\LR1.csproj.CoreCompileInputs.cache
+C:\Users\Юзер\Desktop\University\OOP\LR1\obj\Debug\net7.0\LR1.dll
+C:\Users\Юзер\Desktop\University\OOP\LR1\obj\Debug\net7.0\refint\LR1.dll
+C:\Users\Юзер\Desktop\University\OOP\LR1\obj\Debug\net7.0\LR1.pdb
+C:\Users\Юзер\Desktop\University\OOP\LR1\obj\Debug\net7.0\LR1.genruntimeconfig.cache
+C:\Users\Юзер\Desktop\University\OOP\LR1\obj\Debug\net7.0\ref\LR1.dll
