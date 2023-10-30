@@ -1,27 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace LR1
 {
-    public class Game
+    class Game
     {
-        private static uint idCounter = 0;
-        
+        public string OpponentName { get; }
+        public bool IsWin { get; }
+        public int Rating { get; }
 
-        public GameAccount winner { get; }
-        public GameAccount loser { get; }
-        public uint rating { get; }
-        public uint GameId { get; }
-
-        public Game(GameAccount winner, GameAccount loser, uint rating)
-    {
-        this.winner = winner;
-        this.loser = loser;
-        this.rating = rating;
-        
-        GameId = idCounter++;
-    }
+        public Game(string opponentName, bool isWin, int rating)
+        {
+            OpponentName = opponentName;
+            IsWin = isWin;
+            Rating = rating;
+        }
     }
 }
