@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <title>ТР-23 Ровний ЛР№4</title>
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <h2>ТР-23, Ровний Григорій Олександрович, варіант №19</h2>
+      </div>
+    </header>
+    <main class="main">
+      <table class="main-table">
+        <tr>
+          <th>Опис завдання</th>
+          <th>Виконання завдання</th>
+        </tr>
+        <tr>
+          <td>
+            <b>Завдання №1:</b>
+            <p>
+              Створити об’єкт «Користувач» з властивостями «ID», «логін»,
+              «пароль».
+            </p>
+          </td>
+          <td class="position">
+            <label>ID: <input type="text" id="userID" /></label>
+            <label>Login: <input type="text" id="userLogin" /></label>
+            <label>Password: <input type="text" id="userPassword" /></label>
+            <button onclick="createUser()">Виконати</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>Завдання №2:</b>
+            <p>
+              Створити об’єкт «Адмін», що містить властивістю «тип» зі значенням
+              «адмін» і методи: додати, видалити і змінити (написати реалізацію
+              методів).
+            </p>
+          </td>
+          <td class="position">
+            <button onclick="createAdmin()">Виконати</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>Завдання №3:</b>
+            <p>
+              Реалізувати об’єднання властивостей і методів об’єктів
+              «Користувач» і «Адмін».
+            </p>
+          </td>
+          <td class="position">
+            <button onclick="combineProperties()">Виконати</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <b>Завдання №4:</b>
+            <p>Додати в прототип об’єкту «Користувач» метод «Показати дані»</p>
+          </td>
+          <td>Виконую</td>
+        </tr>
+        <tr>
+          <td>
+            <b>Завдання №5:</b>
+            <p>
+              Створити об’єкт «Користувач2», що наслідує властивості і методи
+              об’єкту «Користувач» і має власну властивість «Адмін» зі
+              значеннями true/false. Перевизначити в об’єкті «Користувач2» метод
+              «Показати дані».
+            </p>
+          </td>
+          <td>Виконую</td>
+        </tr>
+        <tr>
+          <td>
+            <b>Завдання №6:</b>
+            <p>
+              Завдання на роботу з класами, не виконувати наслідування від
+              попередніх об'єктів! Реалізувати класи «КористувачКлас» і
+              «АдмінКлас» з такими же методами і властивостями як і попередні
+              об’єкти. «АдмінКлас» наслідує методи та властивості від
+              «КористувачКлас». При реалізації використовувати геттери і
+              сеттери, наприклад, для перевірки даних чи виведення в різних
+              виглядах інформацію.
+            </p>
+          </td>
+          <td>Виконую</td>
+        </tr>
+      </table>
+    </main>
+  </body>
+</html>
