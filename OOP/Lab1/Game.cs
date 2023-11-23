@@ -2,19 +2,23 @@ namespace Lab1
 {
     public class Game
     {
-        public string OpponentName { get; }
-        public string EndGame { get; }
-        public int CurrentRating { get; }
-        public string ChangedRating { get; }
-        public int Index { get; }
+        public int GamesCount;
+        public GameAccount Opponent;
+        public string Result;
+        public int Rating; 
+        public int CurrentRating; 
+        private static int _gameIndexSeed = 67890;
+        public int IdGame;
+        
 
-        public Game(int index, string opponentName, string endGame, string changedRating, int currentRating)
+        public Game(int gamesCount, GameAccount opponent, string result, int userRating, int opponentRating)
         {
-            Index = index;
-            OpponentName = opponentName;
-            EndGame = endGame;
-            ChangedRating = changedRating;
-            CurrentRating = currentRating;
+            Opponent = opponent;
+            Result = result;
+            GamesCount = gamesCount;
+            Rating = userRating;
+            CurrentRating = opponentRating;
+            IdGame = _gameIndexSeed++;
         }
     }
 }

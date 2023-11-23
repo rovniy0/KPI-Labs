@@ -1,61 +1,73 @@
 namespace Lab1
-{ 
-    class GameAccount
+{
+    public class GameAccount
     {
-        private static int _index;
-        private string UserName { get; }
-        private int CurrentRating { set; get; }
+        private List<Game> gameHistory = new List<Game>();
+        private string userName;
+        private static int gamesCount;
+        private int currentRating;
 
-        private int GamesCount { set; get; }
-        private readonly List<Game> _stats = new List<Game>();
-
-        public GameAccount(string name)
+        public GameAccount(string player, int currentRating)
         {
-            UserName = name;
-            CurrentRating = 100;
-            _index++;
-            GamesCount = 0;
-        }
-
-        public void WinGame(string opponentName, int rating)
-        {
-            CurrentRating += rating;
-            GamesCount++;
-            var changedRating = new System.Text.StringBuilder();
-            changedRating.Append($"+{rating.ToString()}");
-            var result = new Game(_index, opponentName, "Win", changedRating.ToString(), CurrentRating);
-            _stats.Add(result);
-        }
-
-        public void LoseGame(string opponentName, int rating)
-        {
-            if (rating >= CurrentRating)
+            userName = player;
+            if (currentRating <= 1)
             {
-                CurrentRating = 1;
+                throw new ArgumentOutOfRangeException("Rating cannot be less than 1");
+            }
+            this.currentRating = currentRating;
+        }
+
+        public void WinGame(GameAccount opponent, int rating)
+        {
+            if (rating > 0)
+            {
+                currentRating += rating;
+                opponent.currentRating -= rating;
+                if (opponent.currentRating <= 1)
+                {
+                    throw new ArgumentOutOfRangeException("The rating played must be positive");
+                }
+                gameHistory.Add(new Game(++gamesCount, opponent, "Win", rating, currentRating));
             }
             else
             {
-                CurrentRating -= rating;
+                throw new ArgumentOutOfRangeException("The rating played must be positive");
             }
-            
-            GamesCount++;
-            var changedRating = new System.Text.StringBuilder();
-            changedRating.Append($"-{rating.ToString()}");
-            var result = new Game(_index, opponentName, "Lose", changedRating.ToString(), CurrentRating);
-            _stats.Add(result);
         }
 
-        public string GetStats()
+        public void LoseGame(GameAccount opponent, int rating)
         {
-            var allStats = new System.Text.StringBuilder();
-            allStats.AppendLine($"Stats for {UserName}:");
-            allStats.AppendLine("Index\tOpponent\tEnd of game\tChanged rating\tCurrent rating\tTotal games");
-            foreach (var item in _stats)
+            if (rating > 0)
             {
-                allStats.AppendLine(
-                    $"{item.Index}\t{item.OpponentName}\t\t{item.EndGame}\t\t{item.ChangedRating}\t\t{item.CurrentRating}\t\t{GamesCount}");
+                currentRating -= rating;
+                opponent.currentRating += rating;
+                if (this.currentRating <= 1)
+                {
+                    throw new ArgumentOutOfRangeException("The rating played must be positive");
+                }
+                gameHistory.Add(new Game(++gamesCount, opponent, "Lose", rating, currentRating));
             }
-            return allStats.ToString();
+            else
+            {
+                throw new ArgumentOutOfRangeException("The rating played must be positive");
+            }
+            
+        }
+
+        public void GetStats()
+        {
+            for (int i = 0; i < gameHistory.Count; i++)
+            {
+                Console.WriteLine("\n");
+                Console.WriteLine(userName+"'s stats");
+                Console.WriteLine("Game number " + gameHistory[i].GamesCount);
+                Console.WriteLine("Game ID: " + gameHistory[i].IdGame);
+                Console.WriteLine("Opponent: " + gameHistory[i].Opponent.userName);
+                Console.WriteLine("Bet: " + gameHistory[i].Rating);
+                Console.WriteLine("Result " + gameHistory[i].Result);
+                Console.WriteLine(userName+"'s current rating after game: " + gameHistory[i].CurrentRating);
+                Console.WriteLine(gameHistory[i].Opponent.userName + "'s current rating after game: " + gameHistory[i].Opponent.currentRating);
+            }
         }
     }
 }
