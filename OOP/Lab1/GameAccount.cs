@@ -41,7 +41,7 @@ namespace Lab1
             {
                 currentRating -= rating;
                 opponent.currentRating += rating;
-                if (this.currentRating <= 1)
+                if (currentRating <= 1)
                 {
                     throw new ArgumentOutOfRangeException("The rating played must be positive");
                 }
