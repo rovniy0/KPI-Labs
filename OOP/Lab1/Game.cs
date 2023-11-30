@@ -2,7 +2,6 @@ namespace Lab1
 {
     public class Game
     {
-        public int GamesCount;
         public GameAccount Opponent;
         public string Result;
         public int Rating; 
@@ -11,11 +10,10 @@ namespace Lab1
         public int IdGame;
         
 
-        public Game(int gamesCount, GameAccount opponent, string result, int userRating, int opponentRating)
+        public Game(GameAccount opponent, string result, int userRating, int opponentRating)
         {
             Opponent = opponent;
             Result = result;
-            GamesCount = gamesCount;
             Rating = userRating;
             CurrentRating = opponentRating;
             IdGame = _gameIndexSeed++;
