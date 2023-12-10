@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href=/static/style.css>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Roboto+Slab:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>
+      Лабораторна робота №2. Виконавець: Ровний Григорій Олександрович, ТР-23
+    </title>
+  </head>
+  <body>
+    <main>
+      <div
+        class="form-registration"
+        id="registrationForm"
+        action="/submit_form"
+        method="POST"
+      >
+        <form class="container">
+          <div class="left-container">
+            <div class="user-details">
+              <div class="input-box">
+                <input type="file" id="img" accept="image/*" />
+                <label for="img"
+                  ><img
+                    src="https://thumbs.dreamstime.com/b/%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D1%8C-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F-%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B0-%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D1%8F-%D0%B0%D0%B2%D0%B0%D1%82%D0%B0%D1%80%D1%8B-%D0%BF%D0%BE-%D1%83%D0%BC%D0%BE%D0%BB%D1%87%D0%B0%D0%BD%D0%B8%D1%8E-179376714.jpg"
+                    class="profile-photo"
+                  />
+                </label>
+              </div>
+              <div class="input-box">
+                <span class="details">Ім'я *</span>
+                <input
+                  type="text"
+                  placeholder="Введіть ваше ім'я"
+                  pattern="^[A-ZА-ЯЁ]{1}[a-zа-яё]+$"
+                  required
+                />
+              </div>
+              <div class="input-box">
+                <span class="details"
+                  >Прізвище <span style="color: brown">*</span></span
+                >
+                <input
+                  type="text"
+                  placeholder="Введіть ваше прізвище"
+                  pattern="^[A-ZА-ЯЁ]{1}[a-zа-яё]+$"
+                  required
+                />
+              </div>
+            </div>
+            <div class="gender-details">
+              <input type="radio" name="gender" id="dot-1" />
+              <input type="radio" name="gender" id="dot-2" />
+              <span class="gender-title">Стать</span>
+              <div class="category">
+                <label for="dot-1">
+                  <span class="dot one"></span>
+                  <span class="gender">Чоловіча</span>
+                </label>
+                <label for="dot-2">
+                  <span class="dot two"></span>
+                  <span class="gender">Жіноча</span>
+                </label>
+              </div>
+            </div>
+            <div class="user-details">
+              <div class="input-box">
+                <span class="details">Вік</span>
+                <input
+                  type="number"
+                  placeholder="Введіть ваш вік"
+                  min="1"
+                  max="100"
+                  value="1"
+                  step="1"
+                  required
+                />
+              </div>
+              <div class="input-box">
+                <span class="details">Дата народження</span>
+                <input
+                  type="date"
+                  min="1900-01-01"
+                  max="2023-11-01"
+                  value="2000-01-01"
+                  required
+                />
+              </div>
+              <div class="button-left">
+                <button type="submit" value="Register">Register</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="right-container">
+            <div class="user-details">
+              <div class="input-box">
+                <span class="details">Країна проживання</span>
+                <input
+                  type="input-block"
+                  list="countries"
+                  placeholder="Оберіть країну проживання"
+                />
+                <datalist id="countries">
+                  <option value="Ukraine"></option>
+                  <option value="Europa"></option>
+                  <option value="America"></option>
+                </datalist>
+              </div>
+              <div class="input-box">
+                <span class="details">Номер телефону</span>
+                <input
+                  type="tel"
+                  placeholder="+380XXXXXXXXX"
+                  pattern="\+?380[0-9]{9}"
+                  required
+                />
+              </div>
+              <div class="input-box">
+                <span class="details">Соцмережа</span>
+                <input type="url" placeholder="Посилання на свою соцмережу" />
+              </div>
+              <div class="input-box">
+                <span class="details">Електронна пошта</span>
+                <input
+                  type="email"
+                  placeholder="Введіть електронну пошту"
+                  required
+                />
+              </div>
+              <div class="input-box">
+                <span class="details">Password</span>
+                <input
+                  type="password"
+                  placeholder="Введіть надійний пароль"
+                  pattern="^(?=.*[A-Z])(?=.*\d).{8,}$"
+                  required
+                />
+              </div>
+              <div class="input-box">
+                <span class="details">Чи погоджуєтесь ви з умовами?</span>
+                <input type="checkbox" style="height: 30px" required />
+              </div>
+              <div class="button-right">
+                <button type="reset" value="Відміна">Відміна</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- Форма входу -->
+      <div class="form-login">
+        <form
+          class="container-login"
+          id="loginForm"
+          method="POST"
+          action="/send_email"
+        >
+          <h3>Форма Входу</h3>
+          <div class="user-details-login">
+            <div class="input-box">
+              <input
+                type="email"
+                placeholder="Email"
+                id="loginEmail"
+                required
+              />
+            </div>
+            <div class="input-box">
+              <input
+                type="password"
+                placeholder="Пароль"
+                id="loginPassword"
+                required
+              />
+            </div>
+            <div class="button-login">
+              <button type="submit" onclick="sendLoginForm()" value="Вхід">
+                Вхід
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Форма зворотнього звязку -->
+      <div class="form-feedback">
+        <form class="container-feedback">
+          <h3 id="Form-feedback">Форма зворотнього зв'язку</h3>
+          <div class="contact-info">
+            <div class="user-details-feedback">
+              <div class="input-box">
+                <input
+                  type="text"
+                  placeholder="Ім'я"
+                  pattern="^[A-ZА-ЯЁ]{1}[a-zа-яё]+$"
+                  required
+                />
+              </div>
+              <div class="input-box">
+                <input type="email" placeholder="Email" required />
+              </div>
+              <div class="input-box">
+                <input
+                  type="input-block"
+                  list="feedback"
+                  placeholder="Тема повідомлення"
+                />
+                <datalist id="feedback">
+                  <option value="Відгук про нашу компанію"></option>
+                  <option value="Некоректа робота сайту"></option>
+                  <option value="Недоліки/Пропозиції"></option>
+                  <option value="Інше"></option>
+                </datalist>
+              </div>
+            </div>
+          </div>
+          <div class="message-info">
+            <div class="user-details-feedback">
+              <div class="input-box">
+                <textarea required placeholder="Напишіть ваше повідомлення">
+                </textarea>
+              </div>
+            </div>
+          </div>
+          <div class="user-details-feedback">
+            <div class="button-feedback">
+              <button type="submit" value="Надіслати">Надіслати</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+    <script src="static/script.js"></script>
+  </body>
+</html>
