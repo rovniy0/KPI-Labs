@@ -15,22 +15,22 @@ namespace Lab2.Accounts
         {
             var rnd = new Random();
             var isWin = rnd.Next(2) == 1;
-            var gameBuilder = new GameFactory();
+            var gameFactory = new GameFactory();
             Game game ;
             Game opponentGame;
             switch (playFormat)
             {
                 case "Standart":
-                    game = gameBuilder.StartStandartGame(this, opponent, rating, isWin);
-                    opponentGame = gameBuilder.StartStandartGame(opponent, this, rating, !isWin);
+                    game = gameFactory.StartStandartGame(this, opponent, rating, isWin);
+                    opponentGame = gameFactory.StartStandartGame(opponent, this, rating, !isWin);
                     break;
                 case "Traning":
-                    game = gameBuilder.StartTraningGame(this, opponent, rating, isWin);
-                    opponentGame = gameBuilder.StartTraningGame(opponent, this, rating, !isWin);
+                    game = gameFactory.StartTraningGame(this, opponent, rating, isWin);
+                    opponentGame = gameFactory.StartTraningGame(opponent, this, rating, !isWin);
                     break;
                 case "SingleRating":
-                    game = gameBuilder.StartSingleRatingGame(this, opponent, rating, isWin);
-                    opponentGame = gameBuilder.StartSingleRatingGame(opponent, this, rating, !isWin);
+                    game = gameFactory.StartSingleRatingGame(this, opponent, rating, isWin);
+                    opponentGame = gameFactory.StartSingleRatingGame(opponent, this, rating, !isWin);
                     break;
                 default:
                     throw new InvalidEnumArgumentException("Wrong playFormat");
