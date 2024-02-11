@@ -17,8 +17,9 @@
       <div
         class="form-registration"
         id="registrationForm"
-        action="/submit_form"
+        onsubmit="sendRegistrationForm()"
         method="POST"
+        action="/submit_registration_form"
       >
         <form class="container">
           <div class="left-container">
@@ -34,12 +35,7 @@
               </div>
               <div class="input-box">
                 <span class="details">Ім'я *</span>
-                <input
-                  type="text"
-                  placeholder="Введіть ваше ім'я"
-                  pattern="^[A-ZА-ЯЁ]{1}[a-zа-яё]+$"
-                  required
-                />
+                <input type="text" placeholder="Введіть ваше ім'я" required />
               </div>
               <div class="input-box">
                 <span class="details"
@@ -48,7 +44,6 @@
                 <input
                   type="text"
                   placeholder="Введіть ваше прізвище"
-                  pattern="^[A-ZА-ЯЁ]{1}[a-zа-яё]+$"
                   required
                 />
               </div>
@@ -92,7 +87,13 @@
                 />
               </div>
               <div class="button-left">
-                <button type="submit" value="Register">Register</button>
+                <button
+                  type="submit"
+                  onclick="sendRegistrationForm()"
+                  value="Register"
+                >
+                  Register
+                </button>
               </div>
             </div>
           </div>
@@ -114,12 +115,7 @@
               </div>
               <div class="input-box">
                 <span class="details">Номер телефону</span>
-                <input
-                  type="tel"
-                  placeholder="+380XXXXXXXXX"
-                  pattern="\+?380[0-9]{9}"
-                  required
-                />
+                <input type="tel" placeholder="+380XXXXXXXXX" required />
               </div>
               <div class="input-box">
                 <span class="details">Соцмережа</span>
@@ -138,7 +134,6 @@
                 <input
                   type="password"
                   placeholder="Введіть надійний пароль"
-                  pattern="^(?=.*[A-Z])(?=.*\d).{8,}$"
                   required
                 />
               </div>
@@ -195,12 +190,7 @@
           <div class="contact-info">
             <div class="user-details-feedback">
               <div class="input-box">
-                <input
-                  type="text"
-                  placeholder="Ім'я"
-                  pattern="^[A-ZА-ЯЁ]{1}[a-zа-яё]+$"
-                  required
-                />
+                <input type="text" placeholder="Ім'я" required />
               </div>
               <div class="input-box">
                 <input type="email" placeholder="Email" required />

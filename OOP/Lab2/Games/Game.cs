@@ -12,6 +12,8 @@ namespace Lab2
         private  static int _id = 67890;
         public  int Gameid;
 
+        public int PlayRating { get; internal set; }
+
         public Game(GameAccount gamer, GameAccount opponent, int rating, bool isWin)
         {
             Gamer = gamer;
