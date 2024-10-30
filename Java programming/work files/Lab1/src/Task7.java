@@ -1,3 +1,6 @@
+// Дана площа квадрата. Знайти сторону даного квадрата і мінімальну цілу
+// сторону квадрата, в який вихідний квадрат може бути вписаний.
+
 public class Task7 {
     public static void main(String[] args) {
         if (args.length == 0) {
@@ -18,7 +21,7 @@ public class Task7 {
         double side = Math.sqrt(area);
         int minimum_enclosing_side = (int) Math.ceil(side);
 
-        System.out.println("Side of the square: " + side);
+        System.out.printf("Side of the square: %.2f\n", side);
         System.out.println("Minimum integer side of square: " + minimum_enclosing_side);
     }
 }

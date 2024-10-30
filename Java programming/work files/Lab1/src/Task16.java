@@ -1,3 +1,5 @@
+// Дано сторони прямокутника, знайти його діагональ, периметр
+
 public class Task16 {
     public static void main(String[] args) {
         if(args.length!=2) {

@@ -1,3 +1,5 @@
+// Дано ціле тризначне число. Знайти суму і добуток його цифр.
+
 public class Task12 {
     public static void main(String[] args) {
         int number = Integer.parseInt(args[0]);

@@ -1,4 +1,5 @@
-import java.util.Scanner;
+// У двозначному цілому числі поміняйте цифри місцями, знайдіть його квадратний корінь 
+// і найближче до кореня ціле.
 
 public class Task3 {
     public static void main(String[] args) {
