@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\DAL",
+    "\\src\\DAL\\UnitOfWork"
+  ],
+  "SelectedNode": "\\src\\DAL\\UnitOfWork\\IUnitOfWork.cs",
+  "PreviewInSolutionExplorer": false
+}
