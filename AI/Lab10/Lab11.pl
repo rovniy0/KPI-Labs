@@ -1,16 +1,14 @@
-% --- ОГОЛОШЕННЯ ДАНИХ ---
 
 range(1). range(2). range(3). range(4). range(5). range(6). range(7). range(8). range(9).
 
 in_range(N) :- range(N).
 
-% --- ГЕНЕРАЦІЯ ПРАВИЛЬНОЇ ПОЧАТКОВОЇ ПОЗИЦІЇ ---
 
 valid_position([], []).
 valid_position([Row|Rows], [Col|Cols]) :-
     valid_position(Rows, Cols),
     in_range(Col),
-    \+ member(Col, Cols), % уникнення повторів у стовпцях
+    \+ member(Col, Cols), 
     safe(Row, Col, Rows, Cols).
 
 safe(_, _, [], []).
@@ -26,7 +24,7 @@ generate_positions(Positions) :-
 pairs([], [], []).
 pairs([R|Rs], [C|Cs], [(R,C)|Ps]) :- pairs(Rs, Cs, Ps).
 
-% --- СУСІДНІ КЛІТИНИ ---
+
 
 neighbour((R,C), (R2,C2)) :-
     between(-1,1,DR), between(-1,1,DC),
@@ -34,7 +32,7 @@ neighbour((R,C), (R2,C2)) :-
     R2 is R + DR, C2 is C + DC,
     in_range(R2), in_range(C2).
 
-% --- ОЦІНКА СТАНУ: КІЛЬКІСТЬ КОНФЛІКТІВ ---
+
 
 val_state(State, Score) :-
     findall((M1,M2), (select(M1, State, Rest), member(M2, Rest), conflict(M1, M2)), Conflicts),
@@ -43,7 +41,7 @@ val_state(State, Score) :-
 conflict((R1,C1), (R2,C2)) :-
     R1 =:= R2 ; C1 =:= C2 ; abs(R1 - R2) =:= abs(C1 - C2).
 
-% --- ХОДИ: ПЕРЕМІЩЕННЯ ОДНІЄЇ МУХИ В СУСІДНЮ КЛІТИНКУ ---
+
 
 move(State, MoveIndex-MoveTo) :-
     nth1(Index, State, M),
@@ -62,7 +60,7 @@ in_range_pos((R,C)) :- in_range(R), in_range(C).
 
 % --- HILL CLIMBING ---
 
-hill_climb(0-_, _, []) :- !. % Якщо вже немає конфліктів — кінець
+hill_climb(0-_, _, []) :- !.
 
 hill_climb(_-State, History, [Move | Moves]) :-
     setof(Eval-NewState-Move, (
@@ -75,7 +73,6 @@ hill_climb(_-State, History, [Move | Moves]) :-
     \+ member(State1, History),
     hill_climb(Val-State1, [State1|History], Moves).
 
-% --- ГЕНЕРАЦІЯ ПОЧАТКОВОГО НЕІДЕАЛЬНОГО СТАНУ (3 ВИПАДКОВІ МУХИ ПЕРЕМІЩЕНІ) ---
 
 random_3_moves(State, NewState) :-
     random_permutation(State, [M1, M2, M3 | Rest]),
@@ -84,7 +81,6 @@ random_3_moves(State, NewState) :-
     neighbour(M3, M3New), \+ member(M3New, State),
     append(Rest, [M1New, M2New, M3New], NewState).
 
-% --- ОСНОВНИЙ ЗАПУСК ---
 
 main(Initial, Moves) :-
     generate_positions(Solved),            % згенерувати ідеальний стан

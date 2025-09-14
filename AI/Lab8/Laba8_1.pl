@@ -1,7 +1,7 @@
 % Динамічна декларація
 :- dynamic point/3.
 
-% Додати точки
+
 add_points :-
     assert(point(a, 1, 2)),
     assert(point(b, 2, 4)),
